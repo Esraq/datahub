@@ -26,3 +26,37 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::group(['middleware' => ['auth', 'super_admin']], function() {
+
+   /// Route::Resource('super-admin','SuperAdmin');
+
+   Route::Resource('super_admin','App\Http\Controllers\super_admin\SuperAdminController');
+
+ });
+
+
+ Route::group(['middleware' => ['auth', 'bay']], function() {
+
+    /// Route::Resource('super-admin','SuperAdmin');
+
+    Route::Resource('baybd_dashboard','App\Http\Controllers\baybd\BayBDController');
+
+  });
+
+  Route::group(['middleware' => ['auth', 'asaup']], function() {
+
+    /// Route::Resource('super-admin','SuperAdmin');
+
+    Route::Resource('asaup_dashboard','App\Http\Controllers\asaup\ASAUPController');
+
+  });
+
+  Route::group(['middleware' => ['auth', 'whef']], function() {
+
+    /// Route::Resource('super-admin','SuperAdmin');
+
+    Route::Resource('whef_dashboard','App\Http\Controllers\whef\WHEFController');
+
+  });
