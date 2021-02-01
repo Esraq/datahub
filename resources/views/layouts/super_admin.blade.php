@@ -88,7 +88,7 @@
         <div id="collapsemale" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Employee</h6>
-            <a class="collapse-item" href="#">Create Employee</a>
+            <a class="collapse-item" href="/employee">Create Employee</a>
             <a class="collapse-item" href="#">All Employess</a>
           </div>
         </div>
@@ -146,9 +146,9 @@
         </a>
         <div id="collapseorganization" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Region</h6>
-            <a class="collapse-item" href="#">Add Organization</a>
-            <a class="collapse-item" href="#">All Organizations</a>
+            <h6 class="collapse-header">Organization</h6>
+            <a class="collapse-item" href="/organization">Add Organization</a>
+            <a class="collapse-item" href="/organization_list">All Organizations</a>
            
           </div>
         </div>
