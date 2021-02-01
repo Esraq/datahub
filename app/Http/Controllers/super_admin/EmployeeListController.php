@@ -4,6 +4,8 @@ namespace App\Http\Controllers\super_admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+use DB;
 
 class EmployeeListController extends Controller
 {
@@ -14,6 +16,14 @@ class EmployeeListController extends Controller
      */
     public function index()
     {
+        $users = DB::table('users')
+            ->join('organizations', 'users.organization_id', '=', 'organizations.id')
+            ->join('regions', 'users.region_id', '=', 'regions.id')
+            ->select('users.*', 'regions.region_name', 'organizations.organization_name')
+            ->get();
+
+        ///$users=User::all();
+        view()->share('users',$users);
         return view('super_admin/employee_list');
     }
 

@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('phone');
             $table->string('type');
             $table->string('address');
+            $table->string('designation');
             $table->string('region_id');
             $table->string('organization_id');
             $table->string('filename');

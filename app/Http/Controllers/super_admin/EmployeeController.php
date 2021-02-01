@@ -4,8 +4,11 @@ namespace App\Http\Controllers\super_admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Organization;
 use App\Models\Region;
+use App\Models\User;
+
 
 class EmployeeController extends Controller
 {
@@ -41,7 +44,60 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        
+        $this->validate($request,[
+
+          
+          
+            'name'=>'required|min:1', 
+
+            'email' => 'required|min:1',
+            
+            'address' => 'required|min:1',
+            
+            'phone' => 'required|min:11',
+           
+            'designation' => 'required|min:1',
+
+             'organization'=>'required|min:1',
+             
+             'region'=>'required|min:1',
+
+             'password'=>'required|min:1',
+
+             'photo'=>'required|min:1'
+
+             ]);
+     
+
+     
+             if($request->hasfile('photo'))
+             {
+                 $file = $request->file('photo');
+                 $name=time().$file->getClientOriginalName();
+                 $file->move(public_path().'/public/images/', $name);
+             }
+  
+        $user=new User;
+        $user->name=$request->get('name');
+        $user->email=$request->get('email');
+        $user->address=$request->get('address');
+        $user->phone=$request->get('phone');
+        $user->designation=$request->get('designation');
+        $user->type=$request->get('role');
+        $user->organization_id=$request->get('organization');
+        $user->region_id=$request->get('region');
+        $user->password=\Hash::make($request->get('password'));
+        $user->filename=$name;
+        $user->save();
+        return redirect('employee_list')->with('success', true); 
+       
+
+        
+
+       
+      
     }
 
     /**
@@ -86,6 +142,8 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = \App\Models\User::find($id);
+        $user->delete();
+        return redirect('/employee_list')->with('success', true);
     }
 }

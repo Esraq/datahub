@@ -26,28 +26,40 @@
 
 
 
-    
-<th><center><b>Organization ID</b></center></th>
-<th><center><b>Organization Name</b></center></th>
+<th><center><b>Image</b></center></th>    
+<th><center><b>Name</b></center></th>
+<th><center><b>Email</b></center></th>
+<th><center><b>Phone</b></center></th>
+<th><center><b>Designation</b></center></th>
+<th><center><b>Address</b></center></th>
+<th><center><b>Organization</b></center></th>
+<th><center><b>Region</b></center></th>
 <th></th>
 
 
 <th colspan="2"><center></center></th>
 </tr>
 
-@foreach($organizations as $organization)
+@foreach($users as $user)
 <tr>
 
 
 
-<td><center>{{$organization->id}}</center></td>
-<td><center>{{$organization->organization_name}}</center></td>
+<td><center><b><img src="/public/images/{{$user->filename}}" height="70px" width="70px"></b></center></td>    
+<td><center><b>{{$user->name}}</b></center></td>
+<td><center><b>{{$user->email}}</b></center></td>
+<td><center><b>{{$user->phone}}</b></center></td>
+<td><center><b>{{$user->designation}}</b></center></td>
+<td><center><b>{{$user->address}}</b></center></td>
+<td><center><b>{{$user->organization_name}}</b></center></td>
+<td><center><b>{{$user->region_name}}</b></center></td>
+
 
 
 
 <td>
 
-{!! Form::open(['url' => URL::to('/organization/'.$organization->id),"method"=>"DELETE"]) !!}
+{!! Form::open(['url' => URL::to('/employee/'.$user->id),"method"=>"DELETE"]) !!}
 <button type="submit" class="btn btn-danger">Delete</button>
     {!! Form::close() !!}
 

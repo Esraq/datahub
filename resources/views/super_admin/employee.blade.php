@@ -11,7 +11,7 @@
           <div class="row">
             <div class="col-lg-12">
               <!-- Form Basic -->
-              <form action="organization" method="POST" enctype="multipart/form-data">
+              <form action="employee" method="POST" enctype="multipart/form-data">
                                 @csrf
                                       
 
@@ -39,6 +39,13 @@
                                         </div>
 
                                         <div class="form-group">
+                                            <label><b>Designation:</b></label>
+                                            <input type="text"  name="designation" placeholder="Enter designation of employee" value="{{old('designation')}}" class="form-control" />
+                                            @if ($errors->first('designation'))<div class="alert alert-danger">{!! $errors->first('designation') !!}</div> @endif
+                                            
+                                        </div>
+
+                                        <div class="form-group">
                                             <label><b>Address:</b></label>
                                             <input type="text"  name="address" placeholder="Enter address of employee" value="{{old('address')}}" class="form-control" />
                                             @if ($errors->first('address'))<div class="alert alert-danger">{!! $errors->first('address') !!}</div> @endif
@@ -47,7 +54,7 @@
 
                                      <div class="form-group">
                                     <label>Role(Access of Dashboard):</label>
-                                    <select class="form-control" name="title">
+                                    <select class="form-control" name="role">
                                         <option value="">Choose a role type</option>
                                         <option value="super_admin">Super Admin</option>
                                         <option value="bay">BayBD</option>
@@ -60,8 +67,8 @@
 
                                 <div class="form-group">
                                     <label>Organization:</label>
-                                    <select class="form-control" name="title">
-                                        <option value="">Choose an Organization</option>
+                                    <select class="form-control" name="organization">
+                                        
                                         @foreach($organizations as $organization)
                                         <option value="{{$organization->id}}">{{$organization->organization_name}}</option>
                                         @endforeach
@@ -72,8 +79,8 @@
 
                                 <div class="form-group">
                                     <label>Region:</label>
-                                    <select class="form-control" name="title">
-                                        <option value="">Choose a region</option>
+                                    <select class="form-control" name="region">
+                                        
                                         @foreach($regions as $region)
                                         <option value="{{$region->id}}">{{$region->region_name}}</option>
                                         @endforeach
