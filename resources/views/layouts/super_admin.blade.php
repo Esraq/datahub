@@ -54,13 +54,14 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
           aria-controls="collapseForm">
           <i class="fab fa-fw fa-wpforms"></i>
-          <span>Employee</span>
+          <span>Document</span>
         </a>
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Employee Module</h6>
-            <a class="collapse-item" href="#">Create Employee</a>
-            <a class="collapse-item" href="#">All Employee</a>
+            <h6 class="collapse-header">Docs Module</h6>
+            <a class="collapse-item" href="#">Create Program</a>
+            <a class="collapse-item" href="#">Add document</a>
+            <a class="collapse-item" href="#">All Programs</a>
           </div>
         </div>
       </li>
@@ -78,42 +79,120 @@
           </div>
         </div>
       </li>
-      
       <li class="nav-item">
-        <a class="nav-link" href="ui-colors.html">
-          <i class="fas fa-fw fa-palette"></i>
-          <span>UI Colors</span>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsemale" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-male"></i>
+          <span>Employee Module</span>
         </a>
+        <div id="collapsemale" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Employee</h6>
+            <a class="collapse-item" href="#">Create Employee</a>
+            <a class="collapse-item" href="#">All Employess</a>
+          </div>
+        </div>
       </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsetrainee" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Training Module</span>
+        </a>
+        <div id="collapsetrainee" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Training</h6>
+            <a class="collapse-item" href="#">Create Training</a>
+            <a class="collapse-item" href="#">All Trainings</a>
+            <a class="collapse-item" href="#">Add Traininee</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseattendence" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-thumbs-up"></i>
+          <span>Attendence Module</span>
+        </a>
+        <div id="collapseattendence" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Attendence</h6>
+            <a class="collapse-item" href="#">All Attendences</a>
+            <a class="collapse-item" href="#">Today Attendence</a>
+           
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseregion" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-cloud"></i>
+          <span>Region Module</span>
+        </a>
+        <div id="collapseregion" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Region</h6>
+            <a class="collapse-item" href="/region">Add Regions</a>
+            <a class="collapse-item" href="/region_list">All Regions</a>
+           
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseorganization" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-clock"></i>
+          <span>Organization Module</span>
+        </a>
+        <div id="collapseorganization" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Region</h6>
+            <a class="collapse-item" href="#">Add Organization</a>
+            <a class="collapse-item" href="#">All Organizations</a>
+           
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsesalary" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-clock"></i>
+          <span>Salary Module</span>
+        </a>
+        <div id="collapsesalary" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Salary</h6>
+            <a class="collapse-item" href="#">Add Salary</a>
+            <a class="collapse-item" href="#">All Records</a>
+           
+          </div>
+        </div>
+      </li>
+      
+     
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-        Examples
+        Role Module
       </div>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true"
           aria-controls="collapsePage">
-          <i class="fas fa-fw fa-columns"></i>
-          <span>Pages</span>
+          <i class="fas fa-fw fa-file"></i>
+          <span>Role Management</span>
         </a>
         <div id="collapsePage" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Example Pages</h6>
-            <a class="collapse-item" href="login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="blank.html">Blank Page</a>
+            <h6 class="collapse-header">Role Module</h6>
+            <a class="collapse-item" href="login.html">All Users</a>
+          
+            
           </div>
         </div>
       </li>
      
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span>
-        </a>
-      </li>
+     
       <hr class="sidebar-divider">
-      <div class="version" id="version-ruangadmin"></div>
+    
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">

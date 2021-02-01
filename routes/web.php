@@ -33,6 +33,8 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
    /// Route::Resource('super-admin','SuperAdmin');
 
    Route::Resource('super_admin','App\Http\Controllers\super_admin\SuperAdminController');
+   Route::Resource('region','App\Http\Controllers\super_admin\RegionController');
+   Route::Resource('region_list','App\Http\Controllers\super_admin\RegionListController');
 
  });
 
