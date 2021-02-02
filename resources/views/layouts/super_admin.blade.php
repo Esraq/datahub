@@ -59,9 +59,10 @@
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Docs Module</h6>
-            <a class="collapse-item" href="#">Create Program</a>
+            <a class="collapse-item" href="programme">Create Program</a>
+            <a class="collapse-item" href="programme_list">All Programs</a>
             <a class="collapse-item" href="#">Add document</a>
-            <a class="collapse-item" href="#">All Programs</a>
+          
           </div>
         </div>
       </li>

@@ -39,6 +39,9 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
    Route::Resource('organization_list','App\Http\Controllers\super_admin\OrganizationListController');
    Route::Resource('employee','App\Http\Controllers\super_admin\EmployeeController');
    Route::Resource('employee_list','App\Http\Controllers\super_admin\EmployeeListController');
+   Route::Resource('employee_list','App\Http\Controllers\super_admin\EmployeeListController');
+   Route::Resource('programme','App\Http\Controllers\super_admin\ProgramController');
+   Route::Resource('programme_list','App\Http\Controllers\super_admin\ProgramListController');
 
  });
 
