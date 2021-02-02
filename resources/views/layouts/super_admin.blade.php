@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link href="img/logo/logo.png" rel="icon">
+  <link href="{{asset('img/logo/logo.png')}}" rel="icon">
   <title>Datahub</title>
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="css/ruang-admin.min.css" rel="stylesheet">
+  <link href="{{url('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="{{url('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="{{url('css/ruang-admin.min.css')}}" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -20,7 +20,7 @@
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
-          <img src="img/logo/logo.png">
+          <img src="{{asset('img/logo/logo.png')}}">
         </div>
         <div class="sidebar-brand-text mx-3"></div>
       </a>
@@ -89,7 +89,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Employee</h6>
             <a class="collapse-item" href="/employee">Create Employee</a>
-            <a class="collapse-item" href="#">All Employess</a>
+            <a class="collapse-item" href="employee_list">All Employess</a>
           </div>
         </div>
       </li>
@@ -311,7 +311,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 60px">
+                <img class="img-profile rounded-circle" src="public/images/{{ Auth::user()->filename }}" style="max-width: 60px">
                 <span class="ml-2 d-none d-lg-inline text-white small">{{ Auth::user()->name }}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -394,12 +394,12 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="js/ruang-admin.min.js"></script>
-  <script src="vendor/chart.js/Chart.min.js"></script>
-  <script src="js/demo/chart-area-demo.js"></script>
+  <script src="{{url('vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{url('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+  <script src="{{url('js/ruang-admin.min.js')}}"></script>
+  <script src="{{url('vendor/chart.js/Chart.min.js')}}"></script>
+  <script src="{{url('js/demo/chart-area-demo.js')}}"></script>
 </body>
 
 </html>

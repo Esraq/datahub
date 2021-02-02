@@ -34,10 +34,10 @@
 <th><center><b>Address</b></center></th>
 <th><center><b>Organization</b></center></th>
 <th><center><b>Region</b></center></th>
-<th></th>
+<th colspan="2"><center>Action</center></th>
 
 
-<th colspan="2"><center></center></th>
+
 </tr>
 
 @foreach($users as $user)
@@ -60,11 +60,11 @@
 <td>
 
 {!! Form::open(['url' => URL::to('/employee/'.$user->id),"method"=>"DELETE"]) !!}
-<button type="submit" class="btn btn-danger">Delete</button>
+<button type="submit" class="btn btn-danger mb-1">Delete</button>
     {!! Form::close() !!}
 
-
-
+    
+    
 
 
 
@@ -73,6 +73,11 @@
 
 </td>
 
+
+<td>
+<a href="{{ URL::to('/employee/'.$user->id.'/edit') }}" class="btn btn-primary mb-1">Edit</a>
+
+</td>
 
 <!-- Modal content -->
 

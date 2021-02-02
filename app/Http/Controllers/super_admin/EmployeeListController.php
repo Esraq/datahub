@@ -67,7 +67,14 @@ class EmployeeListController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users = DB::table('users')
+            ->join('organizations', 'users.organization_id', '=', 'organizations.id')
+            ->join('regions', 'users.region_id', '=', 'regions.id')
+            ->select('users.*', 'regions.region_name', 'organizations.organization_name')
+            ->where('id', '=', $id)
+            ->get();
+
+            echo "test";
     }
 
     /**

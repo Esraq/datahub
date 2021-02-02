@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\Organization;
 use App\Models\Region;
 use App\Models\User;
-
+use DB;
 
 class EmployeeController extends Controller
 {
@@ -119,7 +119,22 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $organizations=Organization::all();
+        $regions=Region::all();
+        
+        $users = DB::table('users')
+            ->join('organizations', 'users.organization_id', '=', 'organizations.id')
+            ->join('regions', 'users.region_id', '=', 'regions.id')
+            ->select('users.*', 'regions.region_name', 'organizations.organization_name')
+            ->where('users.id', '=', $id)
+            ->get();
+
+            ///echo $users;
+         view()->share('users',$users);
+        view()->share('organizations',$organizations);
+        view()->share('regions',$regions);
+         return view('super_admin/employee_edit');
     }
 
     /**
@@ -131,7 +146,33 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $image_name = $request->hidden_image;
+        $image = $request->file('image');
+        if($image != '')
+        {
+
+            $image_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('public/images'), $image_name);
+        }
+
+
+        $form_data = array(
+            'name'       =>   $request->name,
+            'email'        =>  $request->email,
+            'address'  =>   $request->address,
+            'phone'  =>   $request->phone,
+            'designation'=>$request->designation,
+            
+            'organization_id'=>$request->organization,
+            'region_id'=>$request->region,
+            'filename'     =>   $image_name
+        );
+
+        User::whereId($id)->update($form_data);
+
+        ///echo "updated";
+
+        return redirect('employee_list')->with('success', true); 
     }
 
     /**
