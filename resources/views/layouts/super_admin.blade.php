@@ -61,7 +61,7 @@
             <h6 class="collapse-header">Docs Module</h6>
             <a class="collapse-item" href="programme">Create Program</a>
             <a class="collapse-item" href="programme_list">All Programs</a>
-            <a class="collapse-item" href="#">Add document</a>
+            <a class="collapse-item" href="document">Add document</a>
           
           </div>
         </div>

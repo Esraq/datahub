@@ -42,6 +42,8 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
    Route::Resource('employee_list','App\Http\Controllers\super_admin\EmployeeListController');
    Route::Resource('programme','App\Http\Controllers\super_admin\ProgramController');
    Route::Resource('programme_list','App\Http\Controllers\super_admin\ProgramListController');
+   Route::Resource('document','App\Http\Controllers\super_admin\DocumentController');
+   Route::get('/docs/{id}','App\Http\Controllers\super_admin\DocumentViewController@index');
 
  });
 

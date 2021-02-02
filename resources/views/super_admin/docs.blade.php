@@ -20,60 +20,38 @@
           <div class="row">
             <div class="col-lg-12">
               <!-- Form Basic -->
-              <table class="table table-striped">
+              <center>
+              <table class="table table-striped" border="2">
 <thead>
 <tr>
 
 
 
 
-<th><center><b>Programme Title</b></center></th>
-<th><center><b>Short Description</b></center></th>
-<th><center><b>Year</b></center></th>
+<th><center><b>Document Id</b></center></th>
 
-<th></th>
-<th></th>
+<th><center><b>Name</b></center></th>
+
+<th><center><b>Docs</b></center></th>
 
 
 
 </tr>
 
-@foreach($programmes as $programme)
+@foreach($docs as $doc)
 <tr>
 
 
 
 
-<td><center>{{$programme->name}}</center></td>
-<td><center>{{$programme->short_description}}</center></td>
-<td><center>{{$programme->year}}</center></td>
+<td><center>{{$doc->id}}</center></td>
+<td><center>{{$doc->name}}</center></td>
+
+
+<td> <center><a class="btn btn-xs btn-warning" target="_blank"  href="../public/images/{{$doc->filename}}" role="button">view</a></center></td>
 
 
 
-<td><center><a class="btn btn-xs btn-warning" target="_blank"  href="/docs/{{$programme->id}}" role="button">view</a></center></td>
-
-
-<td>
-
-{!! Form::open(['url' => URL::to('/programme/'.$programme->id),"method"=>"DELETE"]) !!}
-<button type="submit" class="btn btn-danger mb-1">Delete</button>
-    {!! Form::close() !!}
-
-    
-    
-
-
-
-
-
-
-</td>
-
-
-<td>
-<a href="{{ URL::to('/programme/'.$programme->id.'/edit') }}" class="btn btn-primary mb-1">Edit</a>
-
-</td>
 
 
 
@@ -82,7 +60,7 @@
 </tr>
 @endforeach
 </table>
-                                  
+            </center>                      
                 </div>
               </div>
              </div>
