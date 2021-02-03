@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
    Route::get('/docs/{id}','App\Http\Controllers\super_admin\DocumentViewController@index');
    Route::Resource('training','App\Http\Controllers\super_admin\TrainingController');
    Route::Resource('training_list','App\Http\Controllers\super_admin\TrainingListController');
+   Route::Resource('trainee','App\Http\Controllers\super_admin\TraineeController');
  });
 
 
