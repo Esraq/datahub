@@ -118,8 +118,8 @@
         <div id="collapseattendence" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Attendence</h6>
-            <a class="collapse-item" href="#">All Attendences</a>
-            <a class="collapse-item" href="#">Today Attendence</a>
+            <a class="collapse-item" href="/attendence">Add Attendences</a>
+            <a class="collapse-item" href="/attendence_list">Attendence List</a>
            
           </div>
         </div>
