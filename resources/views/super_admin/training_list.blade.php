@@ -33,7 +33,7 @@
 <th><center>Budget</center></th>
 <th><center>Trainer</center></th>
 <th><center>Organization</center></th>
-
+<th></th>
 <th></th>
 <th></th>
 
@@ -53,10 +53,10 @@
 <td><center>{{$programme->budget}}</center></td>
 <td><center>{{$programme->trainer}}</center></td>
 <td><center>{{$programme->organization_id}}</center></td>
+<td><center><a class="btn btn-xs btn-success" href="/report/{{$programme->id}}" role="button">Report</a></center></td>
+<td><center><a class="btn btn-xs btn-warning" href="/search-trainee/{{$programme->id}}" role="button">view</a></center></td>
 
 
-
-<td><center><a class="btn btn-xs btn-warning" target="_blank"  href="/training/{{$programme->id}}" role="button">view</a></center></td>
 
 
 <td>

@@ -21,22 +21,21 @@
           <div class="row">
             <div class="col-lg-12">
               <!-- Form Basic -->
-              <form action="trainee" method="POST" enctype="multipart/form-data">
+              {!! Form::open(['url' => URL::to('/trainee/'.$doc->id), 'method'=>"put",  'id'=>'myform', 'enctype'=>'multipart/form-data']) !!}
                                 @csrf
-                                      
 
                                
 
                                         <div class="form-group">
                                             <label><b>Name of Trainee:</b></label>
-                                            <input type="text"  name="name" placeholder="Enter name" value="{{old('name')}}" class="form-control" />
+                                            <input type="text"  name="name" placeholder="Enter name" value="{{$doc->name}}" class="form-control" />
                                             @if ($errors->first('name'))<div class="alert alert-danger">{!! $errors->first('name') !!}</div> @endif
                                             
                                         </div>
 
                                         <div class="form-group">
                                             <label><b>Email:</b></label>
-                                            <input type="email"  name="email" placeholder="Enter email" value="{{old('email')}}" class="form-control" />
+                                            <input type="email"  name="email" placeholder="Enter email" value="{{$doc->email}}" class="form-control" />
                                             @if ($errors->first('email'))<div class="alert alert-danger">{!! $errors->first('email') !!}</div> @endif
                                             
                                         </div>
@@ -44,7 +43,7 @@
 
                                         <div class="form-group">
                                             <label><b>Phone:</b></label>
-                                            <input type="text"  name="phone" placeholder="Enter phone" value="{{old('phone')}}" class="form-control" />
+                                            <input type="text"  name="phone" placeholder="Enter phone" value="{{$doc->phone}}" class="form-control" />
                                             @if ($errors->first('phone'))<div class="alert alert-danger">{!! $errors->first('phone') !!}</div> @endif
                                             
                                         </div>
@@ -54,23 +53,13 @@
 
                                         <div class="form-group">
                                             <label><b>Address:</b></label>
-                                            <input type="text"  name="address" placeholder="Enter address" value="{{old('budget')}}" class="form-control" />
+                                            <input type="text"  name="address" placeholder="Enter address" value="{{$doc->address}}" class="form-control" />
                                             @if ($errors->first('budget'))<div class="alert alert-danger">{!! $errors->first('budget') !!}</div> @endif
                                             
                                         </div>
 
 
-                                     <div class="form-group">
-                                    <label>Training:</label>
-                                    <select class="form-control" name="training">
-                                        
-                                        @foreach($training as $training)
-                                        <option value="{{$training->id}}">{{$training->name}}</option>
-                                        @endforeach
-
-
-                                    </select>
-                                </div>
+                                  
 
                                         
                                        

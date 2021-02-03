@@ -103,9 +103,9 @@
         <div id="collapsetrainee" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Training</h6>
-            <a class="collapse-item" href="#">Create Training</a>
-            <a class="collapse-item" href="#">All Trainings</a>
-            <a class="collapse-item" href="#">Add Traininee</a>
+            <a class="collapse-item" href="/training">Create Training</a>
+            <a class="collapse-item" href="/training_list">All Trainings</a>
+            <a class="collapse-item" href="/trainee">Add Traininee</a>
           </div>
         </div>
       </li>
