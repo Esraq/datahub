@@ -65,7 +65,7 @@
                                             
                                             @endforeach
                                             </b></label>
-                                            <input type="text"  name="organization" placeholder="Enter address of employee" value="{{$user->organization_id}}" class="form-control" />
+                                            <input type="text"  name="organization" placeholder="Enter organization of employee" value="{{$user->organization_id}}" class="form-control" />
                                             @if ($errors->first('address'))<div class="alert alert-danger">{!! $errors->first('address') !!}</div> @endif
                                             
                                         </div>
