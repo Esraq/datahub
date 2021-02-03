@@ -39,5 +39,15 @@ class DocumentViewController extends Controller
 
         
     }
+    public function word($id){
+
+        $trainee=Trainee::where('training_id',$id)->get();
+        view()->share('trainee',$trainee);
+        return view('super_admin/word');
+      ///echo $trainee;
+
+
+        
+    }
 
 }

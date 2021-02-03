@@ -36,7 +36,7 @@
 <th></th>
 <th></th>
 <th></th>
-
+<th></th>
 
 
 </tr>
@@ -53,7 +53,8 @@
 <td><center>{{$programme->budget}}</center></td>
 <td><center>{{$programme->trainer}}</center></td>
 <td><center>{{$programme->organization_id}}</center></td>
-<td><center><a class="btn btn-xs btn-success" href="/report/{{$programme->id}}" role="button">Report</a></center></td>
+<td><center><a class="btn btn-xs btn-success" href="/report/{{$programme->id}}" role="button">Excel</a></center></td>
+<td><center><a class="btn btn-xs btn-secondary" href="/word/{{$programme->id}}" role="button">Word</a></center></td>
 <td><center><a class="btn btn-xs btn-warning" href="/search-trainee/{{$programme->id}}" role="button">view</a></center></td>
 
 

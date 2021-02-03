@@ -49,6 +49,7 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
    Route::Resource('trainee','App\Http\Controllers\super_admin\TraineeController');
    Route::get('/search-trainee/{id}','App\Http\Controllers\super_admin\DocumentViewController@trainee');
    Route::get('/report/{id}','App\Http\Controllers\super_admin\DocumentViewController@report');
+   Route::get('/word/{id}','App\Http\Controllers\super_admin\DocumentViewController@word');
  });
 
 
