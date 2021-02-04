@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Document;
 use App\Models\Trainee;
-
+use App\Models\Expense;
+use DB;
 
 class DocumentViewController extends Controller
 {
@@ -48,6 +49,25 @@ class DocumentViewController extends Controller
 
 
         
+    }
+    public function period($month,$year){
+
+      $times=Expense::where('month',$month)->where('year',$year)->get();
+      //echo $times;
+      $count = DB::table('expenses')
+                     ->select(DB::raw('sum(cost) as count'))
+                     ->where('month', '=', $month)
+                     ->where('year',$year)
+                     ->first()
+                     ->count;
+      ////echo $count;
+
+                     
+      view()->share('times',$times);
+      view()->share('count',$count);
+      return view('super_admin/expense_report');
+      
+
     }
 
 }

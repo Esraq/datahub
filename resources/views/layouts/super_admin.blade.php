@@ -75,8 +75,10 @@
         <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Expense Module</h6>
-            <a class="collapse-item" href="#">Create Expense</a>
-            <a class="collapse-item" href="#">All Expenses</a>
+            <a class="collapse-item" href="/expense">Create Expense</a>
+            <a class="collapse-item" href="/expense_list">All Expenses</a>
+            <a class="collapse-item" href="/period">Report</a>
+            
           </div>
         </div>
       </li>
