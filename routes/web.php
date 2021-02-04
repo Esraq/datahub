@@ -52,7 +52,10 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
    Route::get('/word/{id}','App\Http\Controllers\super_admin\DocumentViewController@word');
    Route::Resource('/attendence','App\Http\Controllers\super_admin\AttendenceController');
    Route::Resource('/attendence_list','App\Http\Controllers\super_admin\AttendenceListController');
+   Route::Resource('/expense','App\Http\Controllers\super_admin\ExpenseController');
+   Route::Resource('/expense_list','App\Http\Controllers\super_admin\ExpenseListController');
 
+   
  });
 
 
