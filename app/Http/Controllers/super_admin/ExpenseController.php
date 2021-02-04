@@ -52,9 +52,6 @@ class ExpenseController extends Controller
            
             'comments' => 'required|min:1',
 
-        
-             
-            
 
              ]);
 

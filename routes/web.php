@@ -56,6 +56,9 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
    Route::Resource('/expense_list','App\Http\Controllers\super_admin\ExpenseListController');
    Route::Resource('/period','App\Http\Controllers\super_admin\TimeListController');
    Route::get('/expense_report/{month}/{year}','App\Http\Controllers\super_admin\DocumentViewController@period');
+   Route::Resource('/salary','App\Http\Controllers\super_admin\SalaryController');
+   Route::Resource('/salary_list','App\Http\Controllers\super_admin\SalaryListController');
+
 
    
  });

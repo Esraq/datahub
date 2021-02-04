@@ -37,13 +37,13 @@
 <th><center><b>Cost</b></center></th>
 
 
-
-
-
-
 </tr>
 
+
+
+
 @foreach($times as $time)
+
 <tr>
 
 

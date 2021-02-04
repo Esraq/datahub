@@ -165,8 +165,8 @@
         <div id="collapsesalary" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Salary</h6>
-            <a class="collapse-item" href="#">Add Salary</a>
-            <a class="collapse-item" href="#">All Records</a>
+            <a class="collapse-item" href="/salary">Add Salary</a>
+            <a class="collapse-item" href="/salary_list">All Records</a>
            
           </div>
         </div>
