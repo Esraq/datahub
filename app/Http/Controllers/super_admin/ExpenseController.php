@@ -93,7 +93,8 @@ class ExpenseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $expense =Expense::find($id);
+        return view('super_admin/expense_edit',compact('expense','id'));
     }
 
     /**
@@ -105,7 +106,21 @@ class ExpenseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $form_data = array(
+
+            'sector'  =>   $request->sector,
+            'month'     => $request->month,
+            'year'        => $request->year,
+            'cost'        => $request->amount,
+            'comments'        => $request->comments,
+
+            
+            
+        
+        );
+  
+        Expense::whereId($id)->update($form_data);
+        return redirect('/expense_list')->with('success', true);
     }
 
     /**
@@ -116,6 +131,8 @@ class ExpenseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $expense = \App\Models\Expense::find($id);
+        $expense->delete();
+        return redirect('/expense_list')->with('success', true);
     }
 }
