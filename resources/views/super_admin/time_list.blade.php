@@ -12,7 +12,7 @@
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
-                   Action Completed Successfully
+                   Time Schedule Created Successfully !!
                   </div>
 @endif
           </div>
@@ -47,7 +47,7 @@
 
 <td><center>{{$time->month}}</center></td>
 <td><center>{{$time->year}}</center></td>
-<td><center><a class="btn btn-xs btn-success" href="/expense_report/{{$time->month}}/{{$time->year}}" role="button">Report</a></center></td>
+
 
 
 
@@ -62,27 +62,8 @@
             </center>                      
                 </div>
               </div>
+
              </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @endsection
