@@ -19,6 +19,7 @@ class TrainingController extends Controller
     {
         $organizations=Organization::all();
         view()->share('organizations',$organizations);
+        
         return view('super_admin/training');
     }
 
@@ -61,12 +62,14 @@ class TrainingController extends Controller
 
              ]);
 
-             
+            
+
              
             
 
         $training=new Training;
-
+       // $a=$request->get('organization');
+       // echo $a;
         $training->name=$request->get('name');
         $training->start_date=$request->get('start_date');
         $training->end_date=$request->get('end_date');
@@ -75,6 +78,10 @@ class TrainingController extends Controller
         $training->trainer=$request->get('trainer');
         $training->save();
         return redirect('/training_list')->with('success', true);
+
+        
+
+        
         
      
     }
@@ -99,6 +106,7 @@ class TrainingController extends Controller
     public function edit($id)
     {
         $organizations=Organization::all();
+    
         $training =Training::find($id);
         view()->share('organizations',$organizations);
         return view('super_admin/training_edit',compact('training','id'));
@@ -113,6 +121,8 @@ class TrainingController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
+        
         $form_data = array(
 
             'name'  =>   $request->name,
@@ -124,9 +134,15 @@ class TrainingController extends Controller
             
         
         );
+
+        
+
+
+       // $a=$request->organization;
+        //echo $a;
   
-        Training::whereId($id)->update($form_data);
-        return redirect('/training_list')->with('success', true);
+       Training::whereId($id)->update($form_data);
+       return redirect('/training_list')->with('success', true);
     }
 
     /**

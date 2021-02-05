@@ -18,13 +18,15 @@
                                 <div class="form-group">
                                     <label>Organization:</label>
                                     <select class="form-control" name="organization">
-                                        
-                                        @foreach($organizations as $organization)
-                                        <option value="{{$organization->organization_name}}">{{$organization->organization_name}}</option>
-                                        @endforeach
-
-
-                                    </select>
+   
+   <option>Select Organization</option>
+     
+   @foreach ($organizations as $key => $value)
+     <option value="{{ $value->organization_name }}" {{ ( $key == $value->id) ? 'selected' : '' }}> 
+         {{ $value->organization_name }} 
+     </option>
+   @endforeach    
+ </select>
                                 </div>
 
 

@@ -17,21 +17,22 @@
                                 @csrf
                                       
 
-                                <div class="form-group">
-                                            <label><b>
-                                            
-                                            Existing organization<br>
-                                            
-                                            @foreach($organizations as $organization)
-                                            
-                                             {{$organization->organization_name}} ,
-                                            
-                                            @endforeach
-                                            </b></label>
-                                            <input type="text"  name="organization" placeholder="Enter organization of employee" value="{{$training->organization_id}}" class="form-control" />
-                                            @if ($errors->first('address'))<div class="alert alert-danger">{!! $errors->first('address') !!}</div> @endif
-                                            
-                                        </div>
+                              <div class="form-group">
+                                    <label>Organization:</label>
+                                    <select class="form-control" name="organization">
+                             
+   <option>{{$training->organization_id}}</option>
+
+     
+   @foreach ($organizations as $key => $value)
+     <option value="{{ $value->organization_name }}" {{ ( $key == $value->id) ? 'selected' : '' }}> 
+         {{ $value->organization_name }} 
+     </option>
+   @endforeach    
+ </select>
+                                </div>
+
+
 
 
                                         <div class="form-group">
