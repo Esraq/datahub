@@ -58,8 +58,11 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
    Route::get('/expense_report/{month}/{year}','App\Http\Controllers\super_admin\DocumentViewController@period');
    Route::Resource('/salary','App\Http\Controllers\super_admin\SalaryController');
    Route::Resource('/salary_list','App\Http\Controllers\super_admin\SalaryListController');
-
-
+   Route::Resource('project','App\Http\Controllers\super_admin\ProjectController');
+   Route::Resource('project_list','App\Http\Controllers\super_admin\ProjectListController');
+   Route::Resource('project_docs','App\Http\Controllers\super_admin\ProjectDocsController');
+   Route::Resource('project_view','App\Http\Controllers\super_admin\ProjectViewController');
+   Route::get('/search-doc/{id}','App\Http\Controllers\super_admin\DocumentViewController@project_docs');
    
  });
 
