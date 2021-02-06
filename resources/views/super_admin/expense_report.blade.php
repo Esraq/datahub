@@ -85,11 +85,6 @@ function exportF(elem) {
   return false;
 }
 
-
-
-
-
-
    </script>
 
 

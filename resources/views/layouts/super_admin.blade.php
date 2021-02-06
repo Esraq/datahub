@@ -187,8 +187,6 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Role Module</h6>
             <a class="collapse-item" href="login.html">All Users</a>
-          
-            
           </div>
         </div>
       </li>
@@ -359,7 +357,7 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Sorry to see you go!</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
