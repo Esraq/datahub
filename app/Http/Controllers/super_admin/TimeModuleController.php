@@ -73,6 +73,9 @@ class TimeModuleController extends Controller
     public function edit($id)
     {
         //
+        $times = Time::find($id);
+        return view('super_admin/time_module_edit',compact('times'));
+
     }
 
     /**
@@ -85,6 +88,17 @@ class TimeModuleController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'month' => 'required',
+            'year' => 'required',
+        ]);
+        $time = Time::find($id);
+        $time->month=$request->get('month');
+        $time->year=$request->get('year');
+        $time->save();
+  
+        return redirect()->route('time_module.index')
+                        ->with('success','Time Schedule updated successfully');
     }
 
     /**
@@ -96,5 +110,9 @@ class TimeModuleController extends Controller
     public function destroy($id)
     {
         //
+        $time = Time::find($id);
+        $time->delete();
+        return redirect()->route('time_module.index')
+                        ->with('success','Product deleted successfully');
     }
 }
