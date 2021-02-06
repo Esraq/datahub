@@ -4,11 +4,11 @@ namespace App\Http\Controllers\super_admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Training;
+use App\Models\Project;
+use App\Models\Document;
 use App\Models\Organization;
 
-
-class TrainingController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +19,7 @@ class TrainingController extends Controller
     {
         $organizations=Organization::all();
         view()->share('organizations',$organizations);
-        
-        return view('super_admin/training');
+        return view('super_admin/project');
     }
 
     /**
@@ -46,42 +45,35 @@ class TrainingController extends Controller
 
           
           
-            'name'=>'required|min:1', 
+           'project_name'=>'required|min:1', 
 
-            'organization' => 'required|min:1',
             
-            'trainer' => 'required|min:1',
+           'current_status' => 'required|min:1',
             
-            'start_date' => 'required|min:1',
+           'starting_date' => 'required|min:1',
            
-            'end_date' => 'required|min:1',
+           'end_date' => 'required|min:1',
 
-             'budget'=>'required|min:1'
+           'budget'=>'required|min:1'
              
             
 
-             ]);
+            ]);
 
-            
-
+             
              
             
 
-        $training=new Training;
-       // $a=$request->get('organization');
-       // echo $a;
-        $training->name=$request->get('name');
-        $training->start_date=$request->get('start_date');
-        $training->end_date=$request->get('end_date');
-        $training->budget=$request->get('budget');
-        $training->organization_id=$request->get('organization');
-        $training->trainer=$request->get('trainer');
-        $training->save();
-        return redirect('/training_list')->with('success', true);
+        $project=new project;
 
-        
-
-        
+        $project->project_name=$request->get('project_name');
+        $project->starting_date=$request->get('starting_date');
+        $project->end_date=$request->get('end_date');
+        $project->budget=$request->get('budget');
+        $project->organization_id=$request->get('organization');
+        $project->current_status=$request->get('current_status');
+        $project->save();
+        return redirect('/project_list')->with('success', true);
         
      
     }
@@ -106,11 +98,9 @@ class TrainingController extends Controller
     public function edit($id)
     {
         $organizations=Organization::all();
-    
-        $training =Training::find($id);
-        
+        $project =project::find($id);
         view()->share('organizations',$organizations);
-        return view('super_admin/training_edit',compact('training','id'));
+        return view('super_admin/project_edit',compact('project','id'));
     }
 
     /**
@@ -122,28 +112,20 @@ class TrainingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        
         $form_data = array(
 
-            'name'  =>   $request->name,
-            'trainer'     => $request->trainer,
-            'start_date'        => $request->start_date,
+            'project_name'  =>   $request->project_name,
+            'current_status'     => $request->current_status,
+            'starting_date'        => $request->starting_date,
             'end_date'        => $request->end_date,
-            'budget'=>$request->budget,
-            'organization_id'=>$request->organization
+            'budget'           =>$request->budget,
+            'organization_id'=>$request->organization_id
             
         
         );
-
-        
-
-
-       // $a=$request->organization;
-        //echo $a;
   
-       Training::whereId($id)->update($form_data);
-       return redirect('/training_list')->with('success', true);
+        Project::whereId($id)->update($form_data);
+        return redirect('/project_list')->with('success', true);
     }
 
     /**
@@ -154,8 +136,8 @@ class TrainingController extends Controller
      */
     public function destroy($id)
     {
-        $training = \App\Models\Training::find($id);
-        $training->delete();
-        return redirect('/training_list')->with('success', true);
+        $project = \App\Models\Project::find($id);
+        $project->delete();
+        return redirect('/project_list')->with('success', true);
     }
 }

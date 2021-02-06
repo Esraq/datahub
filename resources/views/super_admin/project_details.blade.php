@@ -20,41 +20,41 @@
           <div class="row">
             <div class="col-lg-12">
               <!-- Form Basic -->
-
-              <a class="btn btn-xs btn-info" id="downloadLink" onclick="exportF(this)">Export to excel</a>
-              <br><br>
-
               <center>
-              <table id="table" class="table table-striped">
+              <table class="table table-striped">
 <thead>
-
-
 <tr>
 
 
 
 
-<th><center><b>Sector</b></center></th>
 
-<th><center><b>Cost</b></center></th>
+
+<th><center><b>Name</b></center></th>
+
+<th colspan="2"><center><b></b></center></th>
+
 
 
 </tr>
 
-
-
-
-@foreach($times as $time)
-
+@foreach($projects as $doc)
 <tr>
 
 
 
 
-<td><center>{{$time->sector}}</center></td>
-<td><center>{{$time->cost}}</center></td>
+<td><center>{{$doc->name}}</center></td>
 
 
+
+<td> <center><a class="btn btn-xs btn-warning" target="_blank"  href="../public/images/{{$doc->filename}}" role="button">view</a></center></td>
+<td>
+
+{!! Form::open(['url' => URL::to('/project_docs/'.$doc->id),"method"=>"DELETE"]) !!}
+<button type="submit" class="btn btn-danger mb-1">Delete</button>
+    {!! Form::close() !!}
+</td>
 
 
 
@@ -64,32 +64,9 @@
 <!-- Modal content -->
 
 </tr>
-<tr>
-
-
-</tr>
 @endforeach
-<tr>
-<td colspan="2">Sum={{$count}}</td>
-</tr>
 </table>
-            </center>
-
-   <script>
-
-    
-function exportF(elem) {
-  var table = document.getElementById("table");
-  var html = table.outerHTML;
-  var url = 'data:application/vnd.ms-excel,' + escape(html); // Set your html table into url 
-  elem.setAttribute("href", url);
-  elem.setAttribute("download", "export.xls"); // Choose the file name
-  return false;
-}
-
-   </script>
-
-
+            </center>                      
                 </div>
               </div>
              </div>
