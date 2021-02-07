@@ -43,9 +43,10 @@
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Project Module</h6>
-            <a class="collapse-item" href="#">Create Project</a>
-            <a class="collapse-item" href="#">View Projects</a>
-            <a class="collapse-item" href="#">Report</a>
+            <a class="collapse-item" href="/project">Create Project</a>
+            <a class="collapse-item" href="/project_list">View Projects</a>
+            <a class="collapse-item" href="/project_docs">Project Docs</a>
+         
            
           </div>
         </div>

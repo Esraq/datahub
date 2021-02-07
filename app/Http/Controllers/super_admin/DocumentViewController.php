@@ -30,6 +30,17 @@ class DocumentViewController extends Controller
 
         
     }
+    public function project_docs($id){
+
+      $projects=Document::where('project_id',$id)->get();
+      view()->share('projects',$projects);
+      return view('super_admin/project_details');
+    ///echo $trainee;
+
+
+      
+  }
+
     public function report($id){
 
         $trainee=Trainee::where('training_id',$id)->get();
