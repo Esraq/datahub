@@ -12,7 +12,7 @@
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
-                   Action Completed Successfully
+                   Time Schedule Operated Successfully !!
                   </div>
 @endif
           </div>
@@ -31,6 +31,7 @@
 <th><center><b>Month</b></center></th>
 
 <th><center><b>Year</b></center></th>
+<th><center><b>Action</b></center></th>
 
 
 
@@ -47,7 +48,18 @@
 
 <td><center>{{$time->month}}</center></td>
 <td><center>{{$time->year}}</center></td>
-<td><center><a class="btn btn-xs btn-success" href="/expense_report/{{$time->month}}/{{$time->year}}" role="button">Report</a></center></td>
+<td><center>
+              <form action="{{ route('time_module.destroy',$time->id) }}" method="POST">
+       
+                    <a class="btn btn-primary" href="{{ route('time_module.edit',$time->id) }}">Edit</a>
+   
+                    @csrf
+                    @method('DELETE')
+      
+                    <button type="submit" class="btn btn-danger">Delete</button>
+              </form
+</center></td>
+
 
 
 
@@ -62,27 +74,8 @@
             </center>                      
                 </div>
               </div>
+
              </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @endsection
