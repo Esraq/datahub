@@ -69,6 +69,7 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
    Route::get('/search-doc/{id}','App\Http\Controllers\super_admin\DocumentViewController@project_docs');
    Route::Resource('/period_list','App\Http\Controllers\super_admin\PeriodListController');
    Route::Resource('/change_password','App\Http\Controllers\super_admin\ChangePasswordController');
+   Route::Resource('/profile','App\Http\Controllers\super_admin\ProfileController');
    
  });
 
