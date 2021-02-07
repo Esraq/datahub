@@ -78,7 +78,7 @@
             <h6 class="collapse-header">Expense Module</h6>
             <a class="collapse-item" href="/expense">Create Expense</a>
             <a class="collapse-item" href="/expense_list">All Expenses</a>
-            <a class="collapse-item" href="/period">Report</a>
+            <a class="collapse-item" href="/period_list">Report</a>
             
           </div>
         </div>

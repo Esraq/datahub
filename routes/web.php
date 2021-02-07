@@ -67,7 +67,8 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
    Route::Resource('project_docs','App\Http\Controllers\super_admin\ProjectDocsController');
    Route::Resource('project_view','App\Http\Controllers\super_admin\ProjectViewController');
    Route::get('/search-doc/{id}','App\Http\Controllers\super_admin\DocumentViewController@project_docs');
-
+   Route::Resource('/period_list','App\Http\Controllers\super_admin\PeriodListController');
+   
    
  });
 
