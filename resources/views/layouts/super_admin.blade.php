@@ -172,6 +172,22 @@
           </div>
         </div>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsetimemodule" aria-expanded="true"
+          aria-controls="collapseTable">
+          <i class="fas fa-fw fa-clock"></i>
+          <span>Time Module</span>
+        </a>
+        <div id="collapsetimemodule" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Time Module</h6>
+            <a class="collapse-item" href={{ route('time_module.create') }}>Create</a>
+            <a class="collapse-item" href={{ url('/time_module') }}>List</a>
+           
+          </div>
+        </div>
+      </li>
       
      
       <hr class="sidebar-divider">
@@ -403,5 +419,4 @@
   <script src="{{url('vendor/chart.js/Chart.min.js')}}"></script>
   <script src="{{url('js/demo/chart-area-demo.js')}}"></script>
 </body>
-
 </html>
