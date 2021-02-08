@@ -70,6 +70,9 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
    Route::Resource('/period_list','App\Http\Controllers\super_admin\PeriodListController');
    Route::Resource('/change_password','App\Http\Controllers\super_admin\ChangePasswordController');
    Route::Resource('/profile','App\Http\Controllers\super_admin\ProfileController');
+   Route::Resource('/role_list','App\Http\Controllers\super_admin\RoleListController');
+
+   Route::get('/role_management/{id}/{type}','App\Http\Controllers\super_admin\RoleController@index');
    
  });
 
