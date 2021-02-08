@@ -15,7 +15,11 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $users=User::all();
+        
+        $user=auth()->user();
+        $c=$user->id;
+        $users=User::all()->where('id',$c);
+       /// $users=User::all();
         view()->share('users',$users);
         return view('super_admin/profile');
     }
@@ -60,7 +64,8 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user =User::find($id);
+        return view('super_admin/profile_edit',compact('user','id'));
     }
 
     /**
@@ -72,7 +77,30 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $image_name = $request->hidden_image;
+        $image = $request->file('image');
+        if($image != '')
+        {
+
+            $image_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('public/images'), $image_name);
+        }
+
+
+        $form_data = array(
+            'name'       =>   $request->name,
+            
+            'address'  =>   $request->address,
+            'phone'  =>   $request->phone,
+            
+            'filename'     =>   $image_name
+        );
+
+        User::whereId($id)->update($form_data);
+
+        ///echo "updated";
+
+        return redirect('profile')->with('success', true);
     }
 
     /**
