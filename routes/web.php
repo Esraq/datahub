@@ -77,6 +77,8 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
    Route::Resource('/search','App\Http\Controllers\super_admin\SearchController');
 
    Route::Resource('/no_data','App\Http\Controllers\super_admin\FakeDataCController');
+
+   Route::Resource('/task_view','App\Http\Controllers\super_admin\TaskViewController');
    
  });
 
@@ -102,5 +104,8 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
     /// Route::Resource('super-admin','SuperAdmin');
 
     Route::Resource('whef_dashboard','App\Http\Controllers\whef\WHEFController');
+    Route::Resource('task','App\Http\Controllers\whef\TaskController');
+    Route::Resource('task_list','App\Http\Controllers\whef\TaskListController');
+
 
   });

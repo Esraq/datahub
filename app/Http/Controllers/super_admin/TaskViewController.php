@@ -4,10 +4,9 @@ namespace App\Http\Controllers\super_admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
 use DB;
 
-class SearchController extends Controller
+class TaskViewController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,16 @@ class SearchController extends Controller
      */
     public function index()
     {
-        //
+        $users = DB::table('users')
+        ->join('tasks', 'users.id', '=', 'tasks.user_id')
+        ->join('organizations', 'users.organization_id', '=', 'organizations.id')
+        ->select('users.*', 'tasks.*','organizations.*')
+        ->get();
+
+        view()->share('users',$users);
+        return view('super_admin/task_view');
+
+   
     }
 
     /**
@@ -37,36 +45,7 @@ class SearchController extends Controller
      */
     public function store(Request $request)
     {
-        $phone=$request->get('phone');
-        //$users=User::find($phone);
-        $users=User::where('phone',$phone)->get();
-
-          
-       /* $users = DB::table('users')
-        ->where('users.phone',$phone)
-        ->join('tasks', 'users.id', '=', 'tasks.user_id')
-        ->join('organizations', 'users.organization_id', '=', 'organizations.id')
-        ->select('users.*','organizations.*')
-        ->get();
-
-        */
-
-
-        $count = DB::table('users')
-                     ->select(DB::raw('count(id) as count'))
-                     ->where('phone', '=', $phone)
-                     ->first()
-                     ->count;
-
-         if($count==0){
-
-            return redirect('/no_data');
-         }
-         else{            
-         view()->share('users',$users);
-         return view('super_admin/users');
-         }
-      
+        //
     }
 
     /**
