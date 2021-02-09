@@ -74,6 +74,10 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
 
    Route::get('/role_management/{id}/{type}','App\Http\Controllers\super_admin\RoleController@index');
    
+   Route::Resource('/search','App\Http\Controllers\super_admin\SearchController');
+
+   Route::Resource('/no_data','App\Http\Controllers\super_admin\FakeDataCController');
+   
  });
 
 

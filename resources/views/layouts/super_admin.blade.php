@@ -228,14 +228,14 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                 aria-labelledby="searchDropdown">
-                <form class="navbar-search">
+                <form class="navbar-search" action="search" method="post">
+                @csrf
                   <div class="input-group">
-                    <input type="text" class="form-control bg-light border-1 small" placeholder="What do you want to look for?"
-                      aria-label="Search" aria-describedby="basic-addon2" style="border-color: #3f51b5;">
+                  <input type="text"  name="phone" placeholder="Example:01770137655" value="{{old('phone')}}" class="form-control" />
                     <div class="input-group-append">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                        
+                    
                     </div>
                   </div>
                 </form>
