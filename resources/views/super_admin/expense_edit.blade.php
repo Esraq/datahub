@@ -35,11 +35,18 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label><b>Month:</b></label>
-                                            <input type="text"  name="month" placeholder="Enter month example:January" value="{{$expense->month}}" class="form-control" />
-                                            @if ($errors->first('month'))<div class="alert alert-danger">{!! $errors->first('month') !!}</div> @endif
-                                            
-                                        </div>
+                                    <label>Month:</label>
+                                   
+                                    <select class="form-control" name="month">
+                                    <option>{{$expense->month}}</option>
+                                        @foreach($times as $time)
+                                        <option value="{{$time->month}}">{{$time->month}}</option>
+                                        @endforeach
+
+
+                                    </select>
+                                </div>
+
 
 
                                         <div class="form-group">

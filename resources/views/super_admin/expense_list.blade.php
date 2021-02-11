@@ -30,7 +30,7 @@
 
 <th><center><b>Sector</b></center></th>
 
-<th><center><b>Cost</b></center></th>
+<th><center><b>Month</b></center></th>
 
 <th><center><b>Year</b></center></th>
 

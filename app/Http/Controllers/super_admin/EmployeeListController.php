@@ -18,8 +18,8 @@ class EmployeeListController extends Controller
     {
         $users = DB::table('users')
             ->join('organizations', 'users.organization_id', '=', 'organizations.id')
-            ->join('regions', 'users.region_id', '=', 'regions.id')
-            ->select('users.*', 'regions.region_name', 'organizations.organization_name')
+            
+            ->select('users.*', 'organizations.organization_name')
             ->get();
 
         ///$users=User::all();

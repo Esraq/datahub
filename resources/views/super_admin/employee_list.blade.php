@@ -33,7 +33,7 @@
 <th><center><b>Designation</b></center></th>
 <th><center><b>Address</b></center></th>
 <th><center><b>Organization</b></center></th>
-<th><center><b>Region</b></center></th>
+
 <th colspan="2"><center>Action</center></th>
 
 
@@ -52,7 +52,7 @@
 <td><center><b>{{$user->designation}}</b></center></td>
 <td><center><b>{{$user->address}}</b></center></td>
 <td><center><b>{{$user->organization_name}}</b></center></td>
-<td><center><b>{{$user->region_name}}</b></center></td>
+
 
 
 

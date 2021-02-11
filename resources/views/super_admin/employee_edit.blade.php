@@ -53,44 +53,22 @@
                                             
                                         </div>
 
-
                                         <div class="form-group">
-                                            <label><b>
-                                            
-                                            For updating organization<br>
-                                            
-                                            @foreach($organizations as $organization)
-                                            
-                                             {{$organization->organization_name}} id is {{$organization->id}},
-                                            
-                                            @endforeach
-                                            </b></label>
-                                            <input type="text"  name="organization" placeholder="Enter organization of employee" value="{{$user->organization_id}}" class="form-control" />
-                                            @if ($errors->first('address'))<div class="alert alert-danger">{!! $errors->first('address') !!}</div> @endif
-                                            
-                                        </div>
+                                    <label>Organization:</label>
+                                    <select class="form-control" name="organization_id">
+                             
+   <option>{{$user->organization_id}}</option>
 
-                                    
+     
+   @foreach ($organizations as $key => $value)
+     <option value="{{ $value->id }}" {{ ( $key == $value->id) ? 'selected' : '' }}> 
+         {{ $value->organization_name }} 
+     </option>
+   @endforeach    
+ </select>
+                                </div>
 
                               
-
-                                <div class="form-group">
-                                    <label>
-                                    <b>
-                                    For updating Region <br>
-                                    @foreach($regions as $region)
-                                            
-                                             {{$region->region_name}} id is {{$region->id}},
-                                            
-                                            @endforeach
-                                    
-                                    </b>
-                                    </label>
-
-                                    <input type="text"  name="region" placeholder="Enter address of employee" value="{{$user->region_id}}" class="form-control" />
-                                            @if ($errors->first('address'))<div class="alert alert-danger">{!! $errors->first('address') !!}</div> @endif
-                                   
-                                </div>
 
                               
 

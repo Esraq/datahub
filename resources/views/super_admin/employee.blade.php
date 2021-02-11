@@ -52,18 +52,7 @@
                                             
                                         </div>
 
-                                     <div class="form-group">
-                                    <label>Role(Access of Dashboard):</label>
-                                    <select class="form-control" name="role">
-                                        <option value="">Choose a role type</option>
-                                        <option value="super_admin">Super Admin</option>
-                                        <option value="bay">BayBD</option>
-                                        <option value="whef">WHEF</option>
-                                        <option value="asaup">ASAUP</option>
-
-
-                                    </select>
-                                </div>
+                                   
 
                                 <div class="form-group">
                                     <label>Organization:</label>
@@ -77,17 +66,6 @@
                                     </select>
                                 </div>
 
-                                <div class="form-group">
-                                    <label>Region:</label>
-                                    <select class="form-control" name="region">
-                                        
-                                        @foreach($regions as $region)
-                                        <option value="{{$region->id}}">{{$region->region_name}}</option>
-                                        @endforeach
-
-
-                                    </select>
-                                </div>
 
                                 <div class="form-group">
                                             <label><b>Password:</b></label>

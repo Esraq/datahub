@@ -97,8 +97,11 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        $organizations=Organization::all();
+
         $project =project::find($id);
+        $a=$project->organization_id;
+        $organizations=Organization::where('organization_name','!=',$a)->get();
+       
         view()->share('organizations',$organizations);
         return view('super_admin/project_edit',compact('project','id'));
     }

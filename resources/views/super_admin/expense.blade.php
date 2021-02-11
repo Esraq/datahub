@@ -33,22 +33,42 @@
                                             @if ($errors->first('sector'))<div class="alert alert-danger">{!! $errors->first('sector') !!}</div> @endif
                                             
                                         </div>
-
                                         <div class="form-group">
-                                            <label><b>Month:</b></label>
-                                            <input type="text"  name="month" placeholder="Enter month example:January" value="{{old('month')}}" class="form-control" />
-                                            @if ($errors->first('month'))<div class="alert alert-danger">{!! $errors->first('month') !!}</div> @endif
-                                            
-                                        </div>
+                                    <label>Month:</label>
+                                    <select class="form-control" name="month">
+                             
+  
+
+     
+   @foreach ($times as $time)
+     <option value="{{ $time->month }}"> 
+         {{ $time->month }} 
+     </option>
+   @endforeach    
+ </select>
+                         
+                         
+ @if ($errors->first('month'))<div class="alert alert-danger">{!! $errors->first('month') !!}</div> @endif                         
+                                </div>
 
 
-                                        <div class="form-group">
-                                            <label><b>Year:</b></label>
-                                            <input type="text"  name="year" placeholder="Enter year" value="{{old('year')}}" class="form-control" />
-                                            @if ($errors->first('year'))<div class="alert alert-danger">{!! $errors->first('year') !!}</div> @endif
-                                            
-                                        </div>
+                                <div class="form-group">
+                                    <label>Year:</label>
+                                    <select class="form-control" name="year">
+                             
+   
 
+     
+   @foreach ($times as $time)
+     <option value="{{ $time->year }}"> 
+         {{ $time->year }} 
+     </option>
+   @endforeach    
+ </select>
+                         
+                         
+ @if ($errors->first('month'))<div class="alert alert-danger">{!! $errors->first('month') !!}</div> @endif                         
+                                </div>
 
 
 

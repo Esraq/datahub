@@ -62,7 +62,7 @@ class EmployeeController extends Controller
 
              'organization'=>'required|min:1',
              
-             'region'=>'required|min:1',
+            
 
              'password'=>'required|min:1',
 
@@ -85,9 +85,9 @@ class EmployeeController extends Controller
         $user->address=$request->get('address');
         $user->phone=$request->get('phone');
         $user->designation=$request->get('designation');
-        $user->type=$request->get('role');
+        $user->type="super_admin";
         $user->organization_id=$request->get('organization');
-        $user->region_id=$request->get('region');
+        $user->region_id="Mirpur";
         $user->password=\Hash::make($request->get('password'));
         $user->filename=$name;
         $user->save();
@@ -163,8 +163,8 @@ class EmployeeController extends Controller
             'phone'  =>   $request->phone,
             'designation'=>$request->designation,
             
-            'organization_id'=>$request->organization,
-            'region_id'=>$request->region,
+            'organization_id'=>$request->organization_id,
+            'region_id'=>"Mirpur",
             'filename'     =>   $image_name
         );
 

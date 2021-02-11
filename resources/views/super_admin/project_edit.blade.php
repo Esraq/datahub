@@ -53,14 +53,20 @@
                                             @if ($errors->first('budget'))<div class="alert alert-danger">{!! $errors->first('budget') !!}</div> @endif
                                             
                                         </div>
-
                                         <div class="form-group">
-                                            <label><b> Organation</b></label>
-                                            <input type="text"  name="organization_id" placeholder="Enter organization of employee" value="{{$project->organization_id}}" class="form-control" />
-                                            @if ($errors->first('address'))<div class="alert alert-danger">{!! $errors->first('address') !!}</div> @endif
-                                            
-                                        </div>
-              
+                                    <label>Organization:</label>
+                                    <select class="form-control" name="organization_id">
+                             
+   <option>{{$project->organization_id}}</option>
+
+     
+   @foreach ($organizations as $key => $value)
+     <option value="{{ $value->organization_name }}" {{ ( $key == $value->id) ? 'selected' : '' }}> 
+         {{ $value->organization_name }} 
+     </option>
+   @endforeach    
+ </select>
+                                </div>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>
                                   

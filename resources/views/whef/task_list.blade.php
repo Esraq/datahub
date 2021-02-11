@@ -1,4 +1,4 @@
-@extends('layouts.whef')
+@extends('layouts.super_admin')
 
 @section('content')
 

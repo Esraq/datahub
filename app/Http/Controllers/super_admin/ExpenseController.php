@@ -5,6 +5,7 @@ namespace App\Http\Controllers\super_admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Expense;
+use App\Models\Time;
 
 class ExpenseController extends Controller
 {
@@ -16,7 +17,8 @@ class ExpenseController extends Controller
     public function index()
     {
         
-
+        $times=Time::all();
+        view()->share('times',$times);
         return view('super_admin/expense');
     }
 
@@ -56,19 +58,24 @@ class ExpenseController extends Controller
              ]);
 
              
+
+             
              
             
 
         $expense=new Expense;
 
+         
         $expense->sector=$request->get('sector');
         $expense->month=$request->get('month');
         $expense->year=$request->get('year');
         $expense->cost=$request->get('amount');
         $expense->comments=$request->get('comments');
         $expense->save();
-        ///echo "save";
+       
         return redirect('/expense_list')->with('success', true);
+
+        
     }
 
     /**
@@ -91,6 +98,9 @@ class ExpenseController extends Controller
     public function edit($id)
     {
         $expense =Expense::find($id);
+        $a=$expense->month;
+        $times=Time::where('month','!=',$a)->get();
+        view()->share('times',$times);
         return view('super_admin/expense_edit',compact('expense','id'));
     }
 
