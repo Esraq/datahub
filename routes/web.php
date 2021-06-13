@@ -31,7 +31,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['middleware' => ['auth', 'super_admin']], function() {
 
    /// Route::Resource('super-admin','SuperAdmin');
-
+   Route::get('importExportView', 'App\Http\Controllers\super_admin\MyController@importExportView');
+   Route::post('import', 'App\Http\Controllers\super_admin\MyController@import')->name('import');
+   Route::get('export', 'App\Http\Controllers\super_admin\MyController@export')->name('export');
+   Route::Resource('beneficiary_list','App\Http\Controllers\super_admin\TranListController');
    Route::Resource('super_admin','App\Http\Controllers\super_admin\SuperAdminController');
    Route::Resource('region','App\Http\Controllers\super_admin\RegionController');
    Route::Resource('region_list','App\Http\Controllers\super_admin\RegionListController');
@@ -82,7 +85,13 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
 
    Route::Resource('task','App\Http\Controllers\whef\TaskController');
    Route::Resource('task_list','App\Http\Controllers\whef\TaskListController');
+
+   Route::Resource('relief','App\Http\Controllers\super_admin\ReliefController');
+
+   Route::Resource('relief_list','App\Http\Controllers\super_admin\ReliefListController');
    
+   Route::get('test','App\Http\Controllers\super_admin\TestController@index');
+   Route::get('getData','App\Http\Controllers\super_admin\TestController@getData')->name('getData');;
  });
 
 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\super_admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Tran;
 use DB;
 
 class SearchController extends Controller
@@ -39,7 +39,7 @@ class SearchController extends Controller
     {
         $phone=$request->get('phone');
         //$users=User::find($phone);
-        $users=User::where('phone',$phone)->get();
+        $items=Tran::where('mobile',$phone)->get();
 
           
        /* $users = DB::table('users')
@@ -52,9 +52,9 @@ class SearchController extends Controller
         */
 
 
-        $count = DB::table('users')
+        $count = DB::table('trans')
                      ->select(DB::raw('count(id) as count'))
-                     ->where('phone', '=', $phone)
+                     ->where('mobile', '=', $phone)
                      ->first()
                      ->count;
 
@@ -63,8 +63,9 @@ class SearchController extends Controller
             return redirect('/no_data');
          }
          else{            
-         view()->share('users',$users);
-         return view('super_admin/users');
+         view()->share('items',$items);
+         return view('super_admin/relief_list');
+        ///echo $users;
          }
       
     }

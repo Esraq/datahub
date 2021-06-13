@@ -20,7 +20,7 @@
           <div class="row">
             <div class="col-lg-12">
               <!-- Form Basic -->
-              <table class="table table-striped">
+              <table id="example">
 <thead>
 <tr>
 
@@ -90,7 +90,13 @@
              </div>
 
 
-
+             <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+  <script>
+  $(function(){
+    $("#example").dataTable();
+  })
+  </script>
 
 
 

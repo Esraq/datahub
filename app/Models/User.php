@@ -2,15 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Models\Organization;
+use Illuminate\Auth\Notifications\ResetPassword;
+use Illuminate\Notifications\Messages\MailMessage;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use Notifiable;
+
+    protected $table = 'users';
 
     /**
      * The attributes that are mass assignable.
@@ -18,7 +19,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
+        'firstName',
+        'lastName',
         'email',
         'password',
     ];
@@ -29,18 +31,29 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password',
-        'remember_token',
+        'password', 'remember_token',
     ];
 
     /**
-     * The attributes that should be cast to native types.
+     * Sends the password reset notification.
      *
-     * @var array
+     * @param  string $token
+     *
+     * @return void
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new CustomPassword($token));
+    }
+}
 
-  
+class CustomPassword extends ResetPassword
+{
+    public function toMail($notifiable)
+    {
+        return (new MailMessage)
+            ->line('Eistry this email because we recieved a forgot password request.')
+            ->action('Reset Password', url(config('app.url') . route('password.reset', $this->token, false)))
+            ->line('If you did not request a password reset, no further action is required. Please contact us if you did not submit this request.');
+    }
 }

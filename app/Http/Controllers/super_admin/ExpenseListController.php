@@ -15,7 +15,8 @@ class ExpenseListController extends Controller
      */
     public function index()
     {
-        $expenses=Expense::all();
+        $expenses=Expense::orderBy('id','desc')->paginate(5);
+        ///$images=Image::orderBy('id','desc')->paginate(8);
         view()->share('expenses',$expenses);
         return view('super_admin/expense_list');
     }

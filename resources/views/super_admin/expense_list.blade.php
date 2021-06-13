@@ -3,6 +3,8 @@
 @section('content')
 
 
+
+
 <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
            
@@ -17,20 +19,26 @@
 @endif
           </div>
 
+
+     
+
+
           <div class="row">
             <div class="col-lg-12">
+
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a sector">
               <!-- Form Basic -->
               <center>
-              <table class="table table-striped">
-<thead>
-<tr>
+              <table id="myTable">
+
+<tr class="header">
 
 
 
 
 <th><center><b>Sector</b></center></th>
 
-<th><center><b>Month</b></center></th>
+<th><center><b>Cost</b></center></th>
 
 <th><center><b>Year</b></center></th>
 
@@ -55,8 +63,6 @@
 <td><center>{{$expense->year}}</center></td>
 <td><center>{{$expense->cost}}</center></td>
 <td><center>{{$expense->comments}}</center></td>
-
-
 
 <td>
 
@@ -91,7 +97,12 @@
 </tr>
 @endforeach
 </table>
-            </center>                      
+            </center>     
+
+
+            {{ $expenses->links('pagination::bootstrap-4')}}
+
+
                 </div>
               </div>
              </div>
@@ -99,7 +110,26 @@
 
 
 
-
+             <script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
 
 
 
