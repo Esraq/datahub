@@ -15,7 +15,7 @@ class TranListController extends Controller
      */
     public function index()
     {
-        $items=Tran::orderBy('id','desc')->paginate(30);
+        $items=Tran::orderBy('id','asc')->paginate(30);
         view()->share('items',$items);
         return view('super_admin/tran_list');
     }

@@ -19,7 +19,7 @@
                 </div>
                 <div class="card-body">
                 @foreach($users as $user)
-               <center><b><img src="/public/images/{{$user->filename}}" height="120px" width="120px"></b></center><br><hr>
+               <center><b><img src="{{ asset('images/' . $user->filename) }}" height="120px" width="120px"></b></center><br><hr>
                <center><b><h5>Name:{{$user->name}}</h5></b></center><hr>
                <center><b><h5>Phone:{{$user->phone}}</h5></b></center><hr>
                <center><b><h5>Address:{{$user->address}}</h5></b></center><hr>

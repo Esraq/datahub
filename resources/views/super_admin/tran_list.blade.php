@@ -81,8 +81,12 @@
 </table>
             </center>                      
                 </div>
+
+                {{ $items->links('pagination::bootstrap-4')}}
               </div>
              </div>
+            </div>
+           
 
 
 

@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout');
+Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
 Auth::routes();
 
@@ -27,6 +27,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
 Route::group(['middleware' => ['auth', 'super_admin']], function() {
 
@@ -38,7 +39,9 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
    Route::Resource('super_admin','App\Http\Controllers\super_admin\SuperAdminController');
    Route::Resource('/search','App\Http\Controllers\super_admin\SearchController');
    Route::Resource('/relief','App\Http\Controllers\super_admin\ReliefController');
-
+   Route::Resource('/change_password','App\Http\Controllers\super_admin\ChangePasswordController');
+   Route::Resource('employee','App\Http\Controllers\super_admin\EmployeeController');
+   Route::Resource('/profile','App\Http\Controllers\super_admin\ProfileController');
    /*
    Route::Resource('region','App\Http\Controllers\super_admin\RegionController');
    Route::Resource('region_list','App\Http\Controllers\super_admin\RegionListController');

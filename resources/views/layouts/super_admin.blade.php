@@ -84,40 +84,21 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
           aria-expanded="true" aria-controls="collapseBootstrap">
           <i class="far fa-fw fa-window-maximize"></i>
-          <span>Projects</span>
+          <span>Benefeciary</span>
         </a>
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Project Module</h6>
-            <a class="collapse-item" href={{ url('/project') }}>Create Project</a>
-            <a class="collapse-item" href={{ url('/project_list') }}>View Projects</a>
-            <a class="collapse-item" href={{ url('/project_docs') }}>Project Docs</a>
+            <h6 class="collapse-header">Relief Module</h6>
+            <a class="collapse-item" href={{ url('/importExportView') }}>Import/Export</a>
+            <a class="collapse-item" href={{ url('/relief') }}>Add benefeciary</a>
+            <a class="collapse-item" href={{ url('/beneficiary_list') }}>View List</a>
          
            
           </div>
         </div>
       </li>
     
-      <hr class="sidebar-divider">
-      <div class="sidebar-heading">
-        Role Module
-      </div>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true"
-          aria-controls="collapsePage">
-          <i class="fas fa-fw fa-file"></i>
-          <span>Task Management</span>
-        </a>
-        <div id="collapsePage" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Task Module</h6>
-            <a class="collapse-item" href="task">Add Task</a>
-            <a class="collapse-item" href="task_list">Task List</a>
-            <a class="collapse-item" href="task_view">View Task</a>
-          </div>
-        </div>
-      </li>
-     
+      
      
       <hr class="sidebar-divider">
     
@@ -157,14 +138,11 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <img class="img-profile rounded-circle" src="public/images/{{ Auth::user()->filename }}" style="max-width: 60px">
+                <img class="img-profile rounded-circle" src="{{ asset('/images/passport.png') }}" style="max-width: 60px">
                 <span class="ml-2 d-none d-lg-inline text-white small">{{ Auth::user()->name }}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="/profile">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
+                
                 <a class="dropdown-item" href="/change_password">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Password
