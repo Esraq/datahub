@@ -54,7 +54,7 @@
 
 <td>
 
-{!! Form::open(['url' => URL::to('/tran/'.$item->id),"method"=>"DELETE"]) !!} 
+{!! Form::open(['url' => URL::to('/relief/'.$item->id),"method"=>"DELETE"]) !!} 
 <button type="submit" class="btn btn-danger mb-1">Delete</button>
     {!! Form::close() !!}
 
@@ -64,7 +64,7 @@
 
 
 <td>
-<a href="{{ URL::to('/salary/'.$item->id.'/edit') }}" class="btn btn-primary mb-1">Edit</a> 
+<a href="{{ URL::to('/relief/'.$item->id.'/edit') }}" class="btn btn-primary mb-1">Edit</a> 
 
 </td>
 

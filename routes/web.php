@@ -36,6 +36,10 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
    Route::get('export', 'App\Http\Controllers\super_admin\MyController@export')->name('export');
    Route::Resource('beneficiary_list','App\Http\Controllers\super_admin\TranListController');
    Route::Resource('super_admin','App\Http\Controllers\super_admin\SuperAdminController');
+   Route::Resource('/search','App\Http\Controllers\super_admin\SearchController');
+   Route::Resource('/relief','App\Http\Controllers\super_admin\ReliefController');
+
+   /*
    Route::Resource('region','App\Http\Controllers\super_admin\RegionController');
    Route::Resource('region_list','App\Http\Controllers\super_admin\RegionListController');
    Route::Resource('organization','App\Http\Controllers\super_admin\OrganizationController');
@@ -91,10 +95,13 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
    Route::Resource('relief_list','App\Http\Controllers\super_admin\ReliefListController');
    
    Route::get('test','App\Http\Controllers\super_admin\TestController@index');
-   Route::get('getData','App\Http\Controllers\super_admin\TestController@getData')->name('getData');;
+   Route::get('getData','App\Http\Controllers\super_admin\TestController@getData')->name('getData');
+   
+   
+   */
  });
 
-
+/*
  Route::group(['middleware' => ['auth', 'bay']], function() {
 
     /// Route::Resource('super-admin','SuperAdmin');
@@ -102,6 +109,10 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
     Route::Resource('baybd_dashboard','App\Http\Controllers\baybd\BayBDController');
 
   });
+
+  */
+
+  /*
 
   Route::group(['middleware' => ['auth', 'asaup']], function() {
 
@@ -111,6 +122,10 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
 
   });
 
+
+  */
+
+  /*
   Route::group(['middleware' => ['auth', 'whef']], function() {
 
     /// Route::Resource('super-admin','SuperAdmin');
@@ -120,3 +135,5 @@ Route::group(['middleware' => ['auth', 'super_admin']], function() {
 
 
   });
+
+  */
